@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Firebase Sample project</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- update the version number as needed -->
+    <!-- <!-- <script defer src="/__/firebase/7.14.1/firebase-app.js"></script> -->
+    <!-- include only the Firebase features as you need -->
+    <!-- <script defer src="/__/firebase/7.14.1/firebase-auth.js"></script> -->
+    <!-- <script defer src="/__/firebase/7.14.1/firebase-database.js"></script> -->
+    <!-- <script defer src="/__/firebase/7.14.1/firebase-messaging.js"></script> -->
+    <!-- <script defer src="/__/firebase/7.14.1/firebase-storage.js"></script> -->
+    <!-- initialize the SDK after all desired features are loaded -->
+    <!-- <script defer src="/__/firebase/init.js"></script> -->
+
+    <style media="screen">
+      body {
+        background: #eceff1;
+        color: rgba(0, 0, 0, 0.87);
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .action-items {
+        max-width: 650px;
+      }
+    </style>
+  </head>
+  <body onload="read()">
+    <div class="container">
+      <h3 class="my-5">Save your data</h3>
+      <div id="login_div" class="action-items">
+        <input
+          type="email"
+          class="form-control my-2"
+          placeholder="First name"
+          id="email"
+        />
+        <input
+          type="password"
+          class="form-control my-2"
+          placeholder="Last name"
+          id="password"
+        />
+        <button class="my-1 btn btn-primary" onclick="login()">
+          Save
+        </button>
+      </div>
+      <div class="form-group" id="records">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>First Name:</th>
+              <th>Last Name:</th>
+              <th>Action:</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDyKaghV06tE93XbZ5A4VOEbcrOPKZA02M",
+        authDomain: "project-90e65.firebaseapp.com",
+        databaseURL: "https://project-90e65.firebaseio.com",
+        projectId: "project-90e65",
+        storageBucket: "project-90e65.appspot.com",
+        messagingSenderId: "898175628175",
+        appId: "1:898175628175:web:33f190621aad754e45d1fa",
+        measurementId: "G-231TPJRZ6N",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // Get a reference to the database service
+      var database = firebase.database();
+    </script>
+    <script src="./index.js"></script>
+  </body>
+</html>
